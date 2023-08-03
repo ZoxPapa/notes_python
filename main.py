@@ -1,0 +1,3 @@
+import View
+
+View.start()
