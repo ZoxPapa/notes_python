@@ -28,8 +28,6 @@ def read_from_file(id):
                     return new_format_note
 
 
-# print(read_from_file(3))
-
 def watch_all_notes():
     with open("data.txt", 'r', encoding="utf-8") as database:
         for line in database:
@@ -53,7 +51,7 @@ def watch_notes_at_date(date):
 
 
 def delete_note(id):
-    #можно добавить проверку на наличие id. На функционал не влияет.
+    #можно добавить проверку на наличие id в списке, но на функционал не влияет.
     if id != 0:
         flag = False
         with open("data.txt", 'r', encoding="utf-8") as database:
@@ -64,7 +62,6 @@ def delete_note(id):
         with open("data.txt", 'w', encoding="utf-8") as database:
             for line in new_database:
                 database.write(line)
-
 
 
 def edit_header(id):
