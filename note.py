@@ -26,6 +26,8 @@ def read_from_file(id):
                     note = line.split(";")
                     new_format_note = f'Date: {note[1]} \nHeader: {note[2]} \nNote: {note[3]}'
                     return new_format_note
+
+
 # print(read_from_file(3))
 
 def watch_all_notes():
@@ -51,7 +53,9 @@ def watch_notes_at_date(date):
 
 
 def delete_note(id):
+    #можно добавить проверку на наличие id. На функционал не влияет.
     if id != 0:
+        flag = False
         with open("data.txt", 'r', encoding="utf-8") as database:
             new_database = list()
             for line in database:
@@ -60,9 +64,7 @@ def delete_note(id):
         with open("data.txt", 'w', encoding="utf-8") as database:
             for line in new_database:
                 database.write(line)
-        return "Deleting complete"
-    else:
-        return "Error"
+
 
 
 def edit_header(id):
@@ -126,5 +128,3 @@ class Note:
             list_notes = database.readlines()
             last_index = int(list_notes[-1][:2])  # при четырехзначном количестве заметок требуется правка
             return last_index + 1
-
-

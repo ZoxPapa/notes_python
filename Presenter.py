@@ -32,3 +32,9 @@ def edit_text(note_id):
         print("Text edition complete.\n")
     else:
         print("Error. Try input correct information (ID for example).\n")
+
+
+def delete_note(note_id):
+    note.delete_note(note_id)
+
+

@@ -30,7 +30,8 @@ def main_menu():
           "3. Watch notes at specific date;\n"
           "4. Watch specific note;\n"
           "5. Edit note;\n"
-          "6. Exit")
+          "6. Delete note;\n"
+          "7. Exit")
     choise = user_choise_menu()
     if choise == "1":
         Presenter.create_new_note()
@@ -50,6 +51,10 @@ def main_menu():
         else:
             Presenter.edit_text(note_id)
     elif choise == "6":
+        Presenter.watch_all_notes()
+        note_id = user_choise_id()
+        Presenter.delete_note(note_id)
+    elif choise == "7":
         exit(0)
     else:
         print("Bad boy, try it again \n")
